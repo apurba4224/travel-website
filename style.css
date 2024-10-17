@@ -1,0 +1,681 @@
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+header {
+    position: relative;
+    width: 100%;
+    background-color: rgba(2, 83, 12, 0.63);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+/*Language Toogle*/
+.lang-toggle {
+    position: fixed;
+    top: 90px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #00A47E;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/* Branding on the left */
+.brand a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Menu icon for mobile */
+.menu-icon {
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    display: none; /* Hidden by default, shown on mobile */
+}
+
+/* Navigation links on the right */
+.nav-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.carousel img {
+    width: 100%;
+    height: auto;
+}
+
+/* Media Query for Tablets */
+@media (max-width: 1024px) {
+    .nav-links li {
+        margin-right: 15px;
+    }
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 50px; /* Adjust based on your header height */
+        right: 0;
+        width: 30%;
+        background-color: rgba(4, 90, 4, 0.61);
+        flex-direction: column;
+        align-items: center;
+        border-radius:5px;
+        display: none;
+        z-index: 1000; /* Ensures the menu appears on top */
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+        text-align: left;
+        width: 100%;
+    }
+
+    .nav-links li a {
+        width: 100%;
+        padding: 15px;
+        display: block;
+        color: white;
+        border-bottom: 1px solid #444;
+    }
+
+    /* Ensure carousel image doesn't get hidden by navbar */
+    .carousel {
+        margin-top: 50px; /* Adjust based on your header height */
+    }
+}
+
+/* Media Query for Small Mobile Devices */
+@media (max-width: 480px) {
+    .nav-links li {
+        margin: 5px 0;
+    }
+
+    .nav-links li a {
+        padding: 12px;
+    }
+}
+
+/* Carousel Section Styles */
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.carousel-container {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    position: relative;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: auto;
+}
+
+.carousel-text {
+    position: absolute;
+    bottom: 20px;
+    left: 50px;
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* Carousel Navigation Buttons */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 36px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+/* Booking Form Section */
+.booking-form {
+    background-color: #f4f4f4;
+    padding: 20px 0;
+}
+
+.form-container {
+    background-color: white;
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+select, input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.submit-btn {
+    width: 100%;
+    background-color: #f68b1e;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #f57a00;
+}
+
+
+/* Card Section */
+.card-section {
+    padding: 50px 0;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+.card-section h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+    max-width: 350px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.card-content p {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #666;
+}
+
+.card-content .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f68b1e;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+a{
+    text-decoration: none;
+}
+
+.card-content .btn:hover {
+    background-color: #f57a00;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .cards-container {
+        justify-content: space-around;
+    }
+}
+
+@media (max-width: 480px) {
+    .card-section h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        max-width: 90%;
+    }
+
+    .card-content h3 {
+        font-size: 20px;
+    }
+
+    .card-content p {
+        font-size: 14px;
+    }
+
+    .card-content .btn {
+        font-size: 14px;
+    }
+}
+
+
+/* Destination Detail Page Styling */
+.destination-detail {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+.detail-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center-align all content inside the container */
+}
+
+.detail-container img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 15px; /* Adds border radius to the image */
+    margin: 0 auto 20px; /* Centers the image horizontally and adds spacing below it */
+    display: block;
+}
+
+.detail-container h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center; /* Ensures the heading is centered */
+}
+
+.detail-container p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: #666;
+    text-align: center; /* Ensures the paragraph is centered */
+}
+
+.detail-container h2 {
+    font-size: 28px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.detail-container ul {
+    list-style: none;
+    padding: 0;
+    text-align: left; /* Keeps the list aligned to the left for better readability */
+    margin: 0 auto;
+    display: inline-block;
+}
+
+.detail-container ul li {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    margin-top: 50px;
+}
+
+/* Auth (Sign In/Sign Up) Page Styling */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.auth-box {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.auth-box h1 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.auth-box .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.auth-box .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #666;
+}
+
+.auth-box .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.auth-box .form-group input:focus {
+    border-color: #f68b1e;
+}
+
+.auth-box .btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #f68b1e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.auth-box .btn:hover {
+    background-color: #f57a00;
+}
+
+.auth-box .sign-up-link {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #666;
+}
+
+.auth-box .sign-up-link a {
+    color: #f68b1e;
+    text-decoration: none;
+}
+
+.auth-box .sign-up-link a:hover {
+    text-decoration: underline;
+}
+
+/* Banner Styling */
+/* Responsive Banner Section */
+.banner-section {
+    background-image: url('images/discount.png'); /* replace with your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 300px; /* adjust as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-align: center;
+    
+    
+}
+
+.banner-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.459); /* dark overlay for text visibility */
+    z-index: 1;
+    border-radius: 10px;
+}
+
+.banner-content {
+    color: white;
+    z-index: 2;
+    
+}
+
+.banner-content h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.signup-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.signup-btn:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    .banner-section {
+        height: 200px;
+    }
+
+    .banner-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .signup-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+.learn-more {
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.learn-more:hover {
+    text-decoration: underline;
+}
+
+
+/* Footer Styling */
+footer {
+    background-color: #d4742c;
+    color: white;
+    padding: 40px 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 250px;
+    padding: 20px;
+}
+
+.footer-column h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.footer-column p, .footer-column ul, .footer-column address {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-column ul li a:hover {
+    color: #fff;
+}
+
+.social-icons a {
+    margin-right: 10px;
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons a:hover img {
+    transform: scale(1.2);
+}
+
+.footer-bottom {
+    background-color: #000000;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 14px;
+    color: #ddd;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-column {
+        text-align: center;
+        min-width: 100%;
+    }
+
+    .social-icons a {
+        margin: 10px;
+    }
+}
